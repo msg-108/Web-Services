@@ -38,6 +38,12 @@ class GuessingGame{
                 break;
             }
 
+            System.out.println("Do you want to try again?(Y/N)");
+            String again = scanner.next().trim().toLowerCase();
+            if (!again.equals("yes") && !again.equals("y")) {
+                break;
+            }
+
         }
 
         System.out.println("Thank you for playing Guessing Game!");
