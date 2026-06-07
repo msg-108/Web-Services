@@ -40,5 +40,7 @@ class GuessingGame{
 
         }
 
+        System.out.println("Thank you for playing Guessing Game!");
+
     }
 }
