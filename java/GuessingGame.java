@@ -10,7 +10,12 @@ class GuessingGame{
         Random rand = new Random();
         int target = rand.nextInt(100) + 1;
 
+        // count
+        int count = 0;
+
         while (true) { 
+
+            ++count;
 
             // Let user guess the number 
             Scanner scanner = new Scanner(System.in);
@@ -35,12 +40,14 @@ class GuessingGame{
             // if guess == target -> "Congratulations! You guessed the number."
             else {
                 System.out.println("Congratulations! You guessed the number.");
+                System.out.println("You have guessed correct answer in " + count + "attempts.");
                 break;
             }
 
             System.out.println("Do you want to try again?(Y/N)");
-            String again = scanner.next().trim().toLowerCase();
-            if (!again.equals("yes") && !again.equals("y")) {
+            String again = scanner.next().trim().toLowerCase(); // dkljkj
+            
+            if (!again.equals("yes") || !again.equals("y")) {
                 break;
             }
 
