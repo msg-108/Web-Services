@@ -10,24 +10,34 @@ class GuessingGame{
         Random rand = new Random();
         int target = rand.nextInt(100) + 1;
 
-        // Let user guess the number 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Guess a number between 1 and 100:");
-        int guess = scanner.nextInt();
+        while (true) { 
 
-        // if guess < target -> "Your guess is lower than target, Guess higher"
-        if (guess < target) {
-            System.out.println("Your guess is lower than target, Guess higher");
-        }
+            // Let user guess the number 
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Guess a number between 1 and 100:");
+            int guess = scanner.nextInt();
 
-        // if guess > target -> "Your guess is higher than target, Guess lower"
-        else if (guess > target) {
-            System.out.println("Your guess is higher than target, Guess lower");
-        }
+            // Handling invalid inputs
+            if (guess <= 0 || guess > 100){
+                System.out.println("ERROR: Invalid input!");
+            }
 
-        // if guess == target -> "Congratulations! You guessed the number."
-        else {
-            System.out.println("Congratulations! You guessed the number.");
+            // if guess < target -> "Your guess is lower than target, Guess higher"
+            if (guess < target) {
+                System.out.println("Your guess is lower than target, Guess higher");
+            }
+
+            // if guess > target -> "Your guess is higher than target, Guess lower"
+            else if (guess > target) {
+                System.out.println("Your guess is higher than target, Guess lower");
+            }
+
+            // if guess == target -> "Congratulations! You guessed the number."
+            else {
+                System.out.println("Congratulations! You guessed the number.");
+                break;
+            }
+
         }
 
     }
