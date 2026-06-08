@@ -41,7 +41,7 @@ class GuessingGame{
             // if guess == target -> "Congratulations! You guessed the number."
             else {
                 System.out.println("Congratulations! You guessed the number.");
-                System.out.println("You have guessed correct answer in " + count + "attempts.");
+                System.out.println("You have guessed correct answer in " + count + " attempts.");
                 break;
             }
 
