@@ -44,10 +44,11 @@ class GuessingGame{
                 break;
             }
 
-            System.out.println("Do you want to try again?(Y/N)");
-            String again = scanner.next().trim().toLowerCase(); // dkljkj
+            // Ask user if they want to try again
+            System.out.println("Do you want to try again?(Y/Yes to continue)");
+            String again = scanner.next().trim().toLowerCase();
             
-            if (!again.equals("yes") || !again.equals("y")) {
+            if (!again.equals("yes") && !again.equals("y")) {
                 break;
             }
 
