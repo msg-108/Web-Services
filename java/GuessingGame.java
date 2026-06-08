@@ -25,6 +25,7 @@ class GuessingGame{
             // Handling invalid inputs
             if (guess <= 0 || guess > 100){
                 System.out.println("ERROR: Invalid input!");
+                continue;
             }
 
             // if guess < target -> "Your guess is lower than target, Guess higher"
