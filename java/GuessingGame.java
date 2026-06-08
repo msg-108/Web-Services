@@ -9,6 +9,9 @@ class GuessingGame{
         // Generate a random number between 1 and 100 
         Random rand = new Random();
         int target = rand.nextInt(100) + 1;
+        
+        // Get user input
+        Scanner scanner = new Scanner(System.in);
 
         // count
         int count = 0;
@@ -16,7 +19,6 @@ class GuessingGame{
         while (true) { 
 
             // Let user guess the number 
-            Scanner scanner = new Scanner(System.in);
             System.out.println("\nGuess a number between 1 and 100:");
             int guess = scanner.nextInt();
 
@@ -42,14 +44,12 @@ class GuessingGame{
             else {
                 System.out.println("\nCongratulations! You guessed the number.");
                 System.out.println("\nYou have guessed correct answer in " + count + " attempts.");
-                scanner.close();
                 break;
             }
 
             // Ask user if they want to try again
             System.out.println("\nDo you want to try again?(Y/Yes to continue)");
             String again = scanner.next().trim().toLowerCase();
-            scanner.close();
 
             if (!again.equals("yes") && !again.equals("y")) {
                 break;
@@ -57,6 +57,7 @@ class GuessingGame{
 
         }
 
+        scanner.close();
         System.out.println("\nThank you for playing Guessing Game!");
 
     }
