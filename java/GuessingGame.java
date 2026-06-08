@@ -15,11 +15,9 @@ class GuessingGame{
 
         while (true) { 
 
-            ++count;
-
             // Let user guess the number 
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Guess a number between 1 and 100:");
+            System.out.println("\nGuess a number between 1 and 100:");
             int guess = scanner.nextInt();
 
             // Handling invalid inputs
@@ -28,25 +26,27 @@ class GuessingGame{
                 continue;
             }
 
+            ++count;
+
             // if guess < target -> "Your guess is lower than target, Guess higher"
             if (guess < target) {
-                System.out.println("Your guess is lower than target, Guess higher");
+                System.out.println("\nYour guess is lower than target, Guess higher");
             }
 
             // if guess > target -> "Your guess is higher than target, Guess lower"
             else if (guess > target) {
-                System.out.println("Your guess is higher than target, Guess lower");
+                System.out.println("\nYour guess is higher than target, Guess lower");
             }
 
             // if guess == target -> "Congratulations! You guessed the number."
             else {
-                System.out.println("Congratulations! You guessed the number.");
-                System.out.println("You have guessed correct answer in " + count + " attempts.");
+                System.out.println("\nCongratulations! You guessed the number.");
+                System.out.println("\nYou have guessed correct answer in " + count + " attempts.");
                 break;
             }
 
             // Ask user if they want to try again
-            System.out.println("Do you want to try again?(Y/Yes to continue)");
+            System.out.println("\nDo you want to try again?(Y/Yes to continue)");
             String again = scanner.next().trim().toLowerCase();
             
             if (!again.equals("yes") && !again.equals("y")) {
@@ -55,7 +55,7 @@ class GuessingGame{
 
         }
 
-        System.out.println("Thank you for playing Guessing Game!");
+        System.out.println("\nThank you for playing Guessing Game!");
 
     }
 }
