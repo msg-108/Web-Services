@@ -1,8 +1,10 @@
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ContactsBook{
     static Scanner scanner = new Scanner(System.in);
+    private ArrayList<Contact> contacts = new ArrayList<>();
 
     private static class Contact {
         String contactName;
@@ -31,13 +33,12 @@ public class ContactsBook{
 
         System.out.println("Enter your choice: ");
         int choice = scanner.nextInt();
-
-        scanner.close();
+        scanner.nextLine(); // consume newline
 
         return choice;
     }
 
-    public static void main(String[] args) {
+    public void addContact() {
         // add contact
         // take contact name
         System.out.println("Enter contact's name: ");
@@ -54,26 +55,34 @@ public class ContactsBook{
         // take email
         System.out.println("Enter " + contactName + "'s email: ");
         String contactEmail = scanner.nextLine();
-        
-        // create contact object
+
+        Contact contact = new Contact();
         contact.contactName = contactName;
         contact.contactNumber = contactNumber;
         contact.contactAddress = contactAddress;
         contact.contactEmail = contactEmail;
+
+        contacts.add(contact);
+        System.out.println("Contact added successfully!");
     }
 
     public static void main(String[] args) {
         System.out.println("Welcome to the Contacts Book!");
 
         int choice = displayMenu();
+        Contact contact = null;
 
-        Contact contact = new Contact();
+        switch (choice) {
+            case 1:
+                break;
+            default:
+                throw new AssertionError();
+        }
+
         
         // print contact details
         System.out.println("\nContact Details:");
         System.out.println(contact);
         
     }
-
-    scanner.close();
 }
