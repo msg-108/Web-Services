@@ -78,6 +78,17 @@ public class ContactsBook{
         }
     }
 
+    public void updateContact() {
+        
+    }
+
+    public void deleteContact() {
+        
+    }
+
+    public void searchContact() {
+        
+    }
     public void run() {
         System.out.println("Welcome to the Contacts Book!");
         boolean running = true;
@@ -93,10 +104,13 @@ public class ContactsBook{
                     viewContact();
                     break;
                 case 3:
+                    updateContact();
                     break;
                 case 4:
+                    deleteContact();
                     break;
                 case 5:
+                    searchContact();
                     break;
                 case 0:
                     System.out.println("Goodbye!");
