@@ -73,7 +73,7 @@ public class ContactsBook{
         } else{
             System.out.println("All Contacts:");
             for (int i = 0; i < contacts.size(); i++) {
-                System.out.println("[ " + i+1 + " ]" + contacts.get(i));
+                System.out.println("[ " + (i+1) + " ]" + contacts.get(i));
             }
         }
     }
@@ -84,7 +84,6 @@ public class ContactsBook{
 
         while (running) {
             int choice = displayMenu();
-            Contact contact = null;
 
             switch (choice) {
                 case 1:
