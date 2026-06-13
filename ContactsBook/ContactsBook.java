@@ -8,11 +8,20 @@ public class ContactsBook{
         String contactNumber;
         String contactAddress;
         String contactEmail;
+
+        @Override
+        public String toString() {
+            return "Contact{" +
+                    "contactName='" + contactName + '\'' +
+                    ", contactNumber='" + contactNumber + '\'' +
+                    ", contactAddress='" + contactAddress + '\'' +
+                    ", contactEmail='" + contactEmail + '\'' +
+                    '}';
+        }
     }
 
     public static void main(String[] args) {
         System.out.println("Welcome to the Contacts Book!");
-        
         Scanner scanner = new Scanner(System.in);
 
         // take contact name
@@ -40,10 +49,7 @@ public class ContactsBook{
         
         // print contact details
         System.out.println("\nContact Details:");
-        System.out.println("Name: " + contact.contactName);
-        System.out.println("Number: " + contact.contactNumber);
-        System.out.println("Address: " + contact.contactAddress);
-        System.out.println("Email: " + contact.contactEmail);
+        System.out.println(contact);
         
     }
 }
