@@ -24,5 +24,12 @@ public class ContactsBook{
         System.out.println("Enter " + contactName + "'s email: ");
         String contactEmail = scanner.next();
         
+
+        // print contact details
+        System.out.println("\nContact Details:");
+        System.out.println("Name: " + contactName);
+        System.out.println("Number: " + contactNumber);
+        System.out.println("Address: " + contactAddress);
+        System.out.println("Email: " + contactEmail);
     }
 }
