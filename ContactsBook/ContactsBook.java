@@ -14,7 +14,7 @@ public class ContactsBook{
 
         // take contact number
         System.out.println("Enter " + contactName + "'s number: ");
-        String contactNumber = scanner.next();
+        String contactNumber = scanner.nextLine();
         
         // take address
         System.out.println("Enter " + contactName + "'s address: ");
@@ -22,7 +22,7 @@ public class ContactsBook{
 
         // take email
         System.out.println("Enter " + contactName + "'s email: ");
-        String contactEmail = scanner.next();
+        String contactEmail = scanner.nextLine();
         
 
         // print contact details
