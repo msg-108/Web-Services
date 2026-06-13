@@ -20,9 +20,29 @@ public class ContactsBook{
         }
     }
 
+    public static int displayMenu() {
+        System.out.println("1. Add contact");
+        System.out.println("2. View contact");
+        System.out.println("3. Update contact");
+        System.out.println("4. Delete contact");
+        System.out.println("5. Search contact");
+        System.out.println("6. Exit");
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter your choice: ");
+        int choice = scanner.nextInt();
+
+        scanner.close();
+
+        return choice;
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to the Contacts Book!");
         Scanner scanner = new Scanner(System.in);
+
+        int choice = displayMenu();
 
         // take contact name
         System.out.println("Enter contact's name: ");
