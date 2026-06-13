@@ -66,6 +66,18 @@ public class ContactsBook{
         System.out.println("Contact added successfully!");
     }
 
+    public void viewContact() {
+        // view contact
+        if (contacts.isEmpty()) {
+            System.out.println("No contacts found!");
+        } else{
+            System.out.println("All Contacts:");
+            for (int i = 0; i < contacts.size(); i++) {
+                System.out.println("[ " + i+1 + " ]" + contacts.get(i));
+            }
+        }
+    }
+
     public void run() {
         System.out.println("Welcome to the Contacts Book!");
         boolean running = true;
@@ -79,6 +91,7 @@ public class ContactsBook{
                     addContact();
                     break;
                 case 2:
+                    viewContact();
                     break;
                 case 3:
                     break;
