@@ -2,6 +2,7 @@
 import java.util.Scanner;
 
 public class ContactsBook{
+    static Scanner scanner = new Scanner(System.in);
 
     private static class Contact {
         String contactName;
@@ -28,8 +29,6 @@ public class ContactsBook{
         System.out.println("5. Search contact");
         System.out.println("6. Exit");
 
-        Scanner scanner = new Scanner(System.in);
-
         System.out.println("Enter your choice: ");
         int choice = scanner.nextInt();
 
@@ -39,11 +38,7 @@ public class ContactsBook{
     }
 
     public static void main(String[] args) {
-        System.out.println("Welcome to the Contacts Book!");
-        Scanner scanner = new Scanner(System.in);
-
-        int choice = displayMenu();
-
+        // add contact
         // take contact name
         System.out.println("Enter contact's name: ");
         String contactName = scanner.nextLine();
@@ -61,15 +56,24 @@ public class ContactsBook{
         String contactEmail = scanner.nextLine();
         
         // create contact object
-        Contact contact = new Contact();
         contact.contactName = contactName;
         contact.contactNumber = contactNumber;
         contact.contactAddress = contactAddress;
         contact.contactEmail = contactEmail;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to the Contacts Book!");
+
+        int choice = displayMenu();
+
+        Contact contact = new Contact();
         
         // print contact details
         System.out.println("\nContact Details:");
         System.out.println(contact);
         
     }
+
+    scanner.close();
 }
