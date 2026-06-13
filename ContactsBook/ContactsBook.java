@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ContactsBook{
-    static Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
     private ArrayList<Contact> contacts = new ArrayList<>();
 
     private static class Contact {
@@ -23,17 +23,17 @@ public class ContactsBook{
         }
     }
 
-    public static int displayMenu() {
+    public int displayMenu() {
         System.out.println("1. Add contact");
         System.out.println("2. View contact");
         System.out.println("3. Update contact");
         System.out.println("4. Delete contact");
         System.out.println("5. Search contact");
-        System.out.println("6. Exit");
+        System.out.println("0. Exit");
 
         System.out.println("Enter your choice: ");
         int choice = scanner.nextInt();
-        scanner.nextLine(); // consume newline
+        scanner.nextLine();
 
         return choice;
     }
@@ -66,23 +66,38 @@ public class ContactsBook{
         System.out.println("Contact added successfully!");
     }
 
-    public static void main(String[] args) {
+    public void run() {
         System.out.println("Welcome to the Contacts Book!");
+        boolean running = true;
 
-        int choice = displayMenu();
-        Contact contact = null;
+        while (running) {
+            int choice = displayMenu();
+            Contact contact = null;
 
-        switch (choice) {
-            case 1:
-                break;
-            default:
-                throw new AssertionError();
+            switch (choice) {
+                case 1:
+                    addContact();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 0:
+                    System.out.println("Goodbye!");
+                    running = false;
+                    break;
+                default:
+                    throw new AssertionError();
+            }
         }
+        scanner.close();
+    }
 
-        
-        // print contact details
-        System.out.println("\nContact Details:");
-        System.out.println(contact);
-        
+    public static void main(String[] args) {
+        new ContactsBook().run();       
     }
 }
