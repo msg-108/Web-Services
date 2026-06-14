@@ -145,6 +145,28 @@ public class EmployeeInfo {
     }
 
     public void deleteEmployee(){
+        viewEmployee();
+        if (employees.isEmpty()) return;
+
+        System.out.println("Enter the index of the employee you want to delete: ");
+
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid input! Please enter a number.");
+            scanner.nextLine();
+            return;
+        }
+
+        int index = scanner.nextInt();
+        scanner.nextLine();
+
+        if (index < 1 || index > employees.size()) {
+            System.out.println("Invalid index!");
+            return;
+        }
+
+        employees.remove(index - 1);
+        employees.trimToSize();
+        System.out.println("Employee deleted successfully!");
         
     }
 
