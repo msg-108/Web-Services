@@ -91,6 +91,13 @@ public class ContactsBook{
         if (contacts.isEmpty()) return;
 
         System.out.println("Enter the index of the contact you want to update: ");
+
+        if (!scanner.hasNextInt()) {
+        System.out.println("Invalid input! Please enter a number.");
+        scanner.nextLine();
+        return;
+        }
+
         int index = scanner.nextInt();
         scanner.nextLine();
 
@@ -135,6 +142,13 @@ public class ContactsBook{
         if (contacts.isEmpty()) return;
 
         System.out.println("Enter the index of the contact you want to delete: ");
+                
+        if (!scanner.hasNextInt()) {
+        System.out.println("Invalid input! Please enter a number.");
+        scanner.nextLine();
+        return;
+        }
+
         int index = scanner.nextInt();
         scanner.nextLine();
 
