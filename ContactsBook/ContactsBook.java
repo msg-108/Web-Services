@@ -138,14 +138,16 @@ public class ContactsBook{
     }
 
     public void searchContact() {
-        viewContact();
-        if (contacts.isEmpty()) return;
-
+        if (contacts.isEmpty()) {
+            System.out.println("No contacts found!");
+            return;
+        }
+        
         System.out.println("Enter the name of the contact you want to search: ");
         String searchName = scanner.nextLine();
 
         for (int i = 0; i < contacts.size(); i++) {
-            if (contacts.get(i).contactName.equals(searchName)) {
+            if (contacts.get(i).contactName.contains(searchName)) {
                 System.out.println("Contact found!");
                 System.out.println(contacts.get(i));
             } else {
