@@ -76,6 +76,15 @@ public class EmployeeInfo {
     }
 
     public void viewEmployee(){
+        if (employees.isEmpty()) {
+            System.out.println("No employees found!");
+            return;
+        } else {
+            System.out.println("All Employees:");
+            for (int i = 0; i < employees.size(); i++) {
+                System.out.println("[ " + (i+1) + " ]" + employees.get(i));
+            }
+        }
 
     }
 
