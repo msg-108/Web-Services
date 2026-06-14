@@ -49,19 +49,24 @@ public class ContactsBook{
         // add contact
         // take contact name
         System.out.println("Enter contact's name: ");
-        String contactName = scanner.nextLine();
+        String contactName = scanner.nextLine().trim();
+        
+        if (contactName.isEmpty()) {
+            System.out.println("Name cannot be empty!");
+            return;
+        }
 
         // take contact number
         System.out.println("Enter " + contactName + "'s number: ");
-        String contactNumber = scanner.nextLine();
+        String contactNumber = scanner.nextLine().trim();
 
         // take address
         System.out.println("Enter " + contactName + "'s address: ");
-        String contactAddress = scanner.nextLine();
+        String contactAddress = scanner.nextLine().trim();
 
         // take email
         System.out.println("Enter " + contactName + "'s email: ");
-        String contactEmail = scanner.nextLine();
+        String contactEmail = scanner.nextLine().trim();
 
         Contact contact = new Contact();
         contact.contactName = contactName;
@@ -110,29 +115,28 @@ public class ContactsBook{
 
         System.out.println("Enter the new name: ");
         String newName = scanner.nextLine().trim();
-        if(!newName.equals("")){
+        if (!newName.isEmpty()) {
             contact.contactName = newName;
         }
 
         System.out.println("Enter the new number: ");
         String newNumber = scanner.nextLine().trim();
-        if(!newNumber.equals("")){
+        if (!newNumber.isEmpty()) {
             contact.contactNumber = newNumber;
         }
 
         System.out.println("Enter the new address: ");
         String newAddress = scanner.nextLine().trim();
-        if(!newAddress.equals("")){
+        if (!newAddress.isEmpty()) {
             contact.contactAddress = newAddress;
         }
 
         System.out.println("Enter the new email: ");
         String newEmail = scanner.nextLine().trim();
-        if(!newEmail.equals("")){
+        if (!newEmail.isEmpty()) {
             contact.contactEmail = newEmail;
         }
         
-        contacts.set(index - 1, contact);
         System.out.println("Contact updated successfully!");
         
     }
@@ -170,17 +174,25 @@ public class ContactsBook{
         }
         
         System.out.println("Enter the name of the contact you want to search: ");
-        String searchName = scanner.nextLine();
+        String searchName = scanner.nextLine().trim().toLowerCase();
+        
+        if (searchName.isEmpty()) {
+            System.out.println("Search term cannot be empty!");
+            return;
+        }
 
+        boolean found = false;
         for (int i = 0; i < contacts.size(); i++) {
-            if (contacts.get(i).contactName.contains(searchName)) {
+            if (contacts.get(i).contactName.toLowerCase().contains(searchName)) {
                 System.out.println("Contact found!");
                 System.out.println(contacts.get(i));
-            } else {
-                System.out.println("Contact not found!");
+                found = true;
             }
         }
         
+        if (!found) {
+            System.out.println("No matching contacts found!");
+        }
     }
     public void run() {
         System.out.println("Welcome to the Contacts Book!");
