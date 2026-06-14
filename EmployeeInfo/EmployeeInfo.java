@@ -51,6 +51,11 @@ public class EmployeeInfo {
         System.out.println("Enter employee name: ");
         String employeeName = scanner.nextLine().trim();
 
+        if (employeeName.isEmpty()) {
+            System.out.println("Name cannot be empty!");
+            return;
+        }
+
         System.out.println("Enter mobile number: ");
         String mobileNumber = scanner.nextLine().trim();
 
