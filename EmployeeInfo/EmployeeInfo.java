@@ -48,6 +48,30 @@ public class EmployeeInfo {
     }
 
     public void addEmployee(){
+        System.out.println("Enter employee name: ");
+        String employeeName = scanner.nextLine().trim();
+
+        System.out.println("Enter mobile number: ");
+        String mobileNumber = scanner.nextLine().trim();
+
+        System.out.println("Enter desk number: ");
+        String deskNumber = scanner.nextLine().trim();   
+
+        System.out.println("Enter employee ID: ");
+        String empID = scanner.nextLine().trim();
+
+        System.out.println("Enter team name: ");
+        String teamName = scanner.nextLine().trim();
+
+        Employee employee = new Employee();
+        employee.employeeName = employeeName;
+        employee.mobileNumber = mobileNumber;
+        employee.deskNumber = deskNumber;
+        employee.empID = empID;
+        employee.teamName = teamName;
+
+        employees.add(employee);
+        System.out.println("Employee added successfully!");
 
     }
 
