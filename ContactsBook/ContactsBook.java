@@ -70,6 +70,7 @@ public class ContactsBook{
         // view contact
         if (contacts.isEmpty()) {
             System.out.println("No contacts found!");
+
         } else{
             System.out.println("All Contacts:");
             for (int i = 0; i < contacts.size(); i++) {
@@ -79,6 +80,34 @@ public class ContactsBook{
     }
 
     public void updateContact() {
+        viewContact();
+        if (contacts.isEmpty()) return;
+
+        System.out.println("Enter the index of the contact you want to update: ");
+        int index = scanner.nextInt();
+        scanner.nextLine();
+
+        if (index < 1 || index > contacts.size()) {
+            System.out.println("Invalid index!");
+            return;
+        }
+        
+        Contact contact = contacts.get(index - 1);
+
+        System.out.println("Enter the new name: ");
+        contact.contactName = scanner.nextLine();
+
+        System.out.println("Enter the new number: ");
+        contact.contactNumber = scanner.nextLine();
+
+        System.out.println("Enter the new address: ");
+        contact.contactAddress = scanner.nextLine();
+
+        System.out.println("Enter the new email: ");
+        contact.contactEmail = scanner.nextLine();
+        
+        contacts.set(index - 1, contact);
+        System.out.println("Contact updated successfully!");
         
     }
 
