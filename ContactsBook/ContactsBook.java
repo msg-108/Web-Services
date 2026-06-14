@@ -102,16 +102,28 @@ public class ContactsBook{
         Contact contact = contacts.get(index - 1);
 
         System.out.println("Enter the new name: ");
-        contact.contactName = scanner.nextLine();
+        String newName = scanner.nextLine().trim();
+        if(!newName.equals("")){
+            contact.contactName = newName;
+        }
 
         System.out.println("Enter the new number: ");
-        contact.contactNumber = scanner.nextLine();
+        String newNumber = scanner.nextLine().trim();
+        if(!newNumber.equals("")){
+            contact.contactNumber = newNumber;
+        }
 
         System.out.println("Enter the new address: ");
-        contact.contactAddress = scanner.nextLine();
+        String newAddress = scanner.nextLine().trim();
+        if(!newAddress.equals("")){
+            contact.contactAddress = newAddress;
+        }
 
         System.out.println("Enter the new email: ");
-        contact.contactEmail = scanner.nextLine();
+        String newEmail = scanner.nextLine().trim();
+        if(!newEmail.equals("")){
+            contact.contactEmail = newEmail;
+        }
         
         contacts.set(index - 1, contact);
         System.out.println("Contact updated successfully!");
