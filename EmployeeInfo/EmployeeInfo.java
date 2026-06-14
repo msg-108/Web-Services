@@ -89,6 +89,58 @@ public class EmployeeInfo {
     }
 
     public void updateEmployee(){
+        viewEmployee();
+        if (employees.isEmpty()) return;
+
+        System.out.println("Enter the index of the employee you want to update: ");
+
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid input! Please enter a number.");
+            scanner.nextLine();
+            return;
+        }
+
+        int index = scanner.nextInt();
+        scanner.nextLine();
+
+        if (index < 1 || index > employees.size()) {
+            System.out.println("Invalid index!");
+            return;
+        }
+
+        Employee employee = employees.get(index - 1);
+
+        System.out.println("Enter the new name: ");
+        String newName = scanner.nextLine().trim();
+        if (!newName.isEmpty()) {
+            employee.employeeName = newName;
+        }
+
+        System.out.println("Enter the new mobile number: ");
+        String newMobileNumber = scanner.nextLine().trim();
+        if (!newMobileNumber.isEmpty()) {
+            employee.mobileNumber = newMobileNumber;
+        }
+
+        System.out.println("Enter the new desk number: ");
+        String newDeskNumber = scanner.nextLine().trim();
+        if (!newDeskNumber.isEmpty()) {
+            employee.deskNumber = newDeskNumber;
+        }
+
+        System.out.println("Enter the new employee ID: ");
+        String newEmpID = scanner.nextLine().trim();
+        if (!newEmpID.isEmpty()) {
+            employee.empID = newEmpID;
+        }
+
+        System.out.println("Enter the new team name: ");
+        String newTeamName = scanner.nextLine().trim();
+        if (!newTeamName.isEmpty()) {
+            employee.teamName = newTeamName;
+        }
+
+        System.out.println("Employee updated successfully!");
         
     }
 
