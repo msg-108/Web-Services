@@ -32,6 +32,13 @@ public class ContactsBook{
         System.out.println("0. Exit");
 
         System.out.println("Enter your choice: ");
+
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid input! Please enter a number.");
+            scanner.nextLine();
+            return -1;
+        }
+
         int choice = scanner.nextInt();
         scanner.nextLine();
 
@@ -154,6 +161,8 @@ public class ContactsBook{
         while (running) {
             int choice = displayMenu();
 
+            if (choice == -1) continue;
+
             switch (choice) {
                 case 1:
                     addContact();
@@ -175,7 +184,8 @@ public class ContactsBook{
                     running = false;
                     break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
             }
         }
         scanner.close();
