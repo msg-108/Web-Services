@@ -171,6 +171,28 @@ public class EmployeeInfo {
     }
 
     public void searchEmployee(){
+        if(employees.isEmpty()) return;
+
+        System.out.println("Enter the name of the employee you want to search: ");
+        String searchName = scanner.nextLine().trim().toLowerCase();
+
+        if (searchName.isEmpty()) {
+            System.out.println("Search term cannot be empty!");
+            return;
+        }
+
+        boolean found = false;
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).employeeName.toLowerCase().contains(searchName)) {
+                System.out.println("Employee found!");
+                System.out.println(employees.get(i));
+                found = true;
+            }
+        }
+        
+        if (!found) {
+            System.out.println("No matching employees found!");
+        }
         
     }
 
