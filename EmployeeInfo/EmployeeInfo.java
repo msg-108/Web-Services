@@ -27,7 +27,24 @@ public class EmployeeInfo {
     }
 
     public int displayMenu() {
-        return 0;
+        System.out.println("1. Add employee");
+        System.out.println("2. View employee");
+        System.out.println("3. Update employee");
+        System.out.println("4. Delete employee");
+        System.out.println("5. Search employee");
+        System.out.println("0. Exit");
+
+        System.out.println("Enter your choice: ");
+
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid input! Please enter a number.");
+            scanner.nextLine();
+            return -1;
+        }
+
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        return choice;
     }
 
     public void addEmployee(){
