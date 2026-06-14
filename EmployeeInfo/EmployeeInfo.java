@@ -176,7 +176,10 @@ public class EmployeeInfo {
     }
 
     public void searchEmployee(){
-        if(employees.isEmpty()) return;
+        if(employees.isEmpty()) {
+            System.out.println("No employees found!");
+            return;
+        }
 
         System.out.println("Enter the name of the employee you want to search: ");
         String searchName = scanner.nextLine().trim().toLowerCase();
