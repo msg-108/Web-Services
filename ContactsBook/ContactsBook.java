@@ -112,6 +112,21 @@ public class ContactsBook{
     }
 
     public void deleteContact() {
+        viewContact();
+        if (contacts.isEmpty()) return;
+
+        System.out.println("Enter the index of the contact you want to delete: ");
+        int index = scanner.nextInt();
+        scanner.nextLine();
+
+        if (index < 1 || index > contacts.size()) {
+            System.out.println("Invalid index!");
+            return;
+        }        
+
+        contacts.remove(index - 1);
+        contacts.trimToSize();
+        System.out.println("Contact deleted successfully!");
         
     }
 
